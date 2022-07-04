@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                echo 'Hello world!8' 
+                jiraComment body: 'This comment was sent by jenkins', issueKey: 'WORK-1'
             }
         }
     }
