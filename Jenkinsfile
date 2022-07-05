@@ -10,7 +10,7 @@ pipeline {
             steps {
             
                 sh """
-                jmeter -n -t "Test Plans\\PetStore-End-to-End-Flow.jmx" -p "Test Plans/data/PetStore_LoadTest.properties" -JTOTAL_THREADS=2 -JTEST_DURATION=60 -l MyRun1.jtl
+                jmeter -n -t "Test Plans/PetStore-End-to-End-Flow.jmx" -p "Test Plans/data/PetStore_LoadTest.properties" -JTOTAL_THREADS=2 -JTEST_DURATION=60 -l MyRun1.jtl
                 """
             
             }
