@@ -9,7 +9,7 @@ pipeline {
         stage('Execute JMeter') {
             steps {
                 
-            bash '''
+            sh '''
                #!/bin/bash
                jmeter -n -t "Test Plans/PetStore-End-to-End-Flow.jmx" -p "Test Plans/data/PetStore_LoadTest.properties" -JTOTAL_THREADS=2 -JTEST_DURATION=60 -l MyRun1.jtl
                '''
