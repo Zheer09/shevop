@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
+	}
     tools {nodejs "nodejs"}
     stages {
         stage('Install') {
@@ -12,9 +15,19 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        stage('Deploy') {
+        stage('Docker build') {
             steps {
-                sh ''
+                sh 'docker build -t shevop/questionApp:latest .'
+            }
+        }
+        stage('Docker login') {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Docker push') {
+            steps {
+                sh 'docker push shevop/questionApp:latest'
             }
         }
         stage('Update jira Issue') {
@@ -39,4 +52,9 @@ pipeline {
             }
         }
     }
+    post {
+		always {
+			sh 'docker logout'
+		}
+	}
 }
