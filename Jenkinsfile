@@ -18,7 +18,7 @@ pipeline {
         stage('Publish Report') {
             steps {
             
-                perfReport filterRegex: '', sourceDataFiles: '**/*.jtl'
+                perfReport filterRegex: '', sourceDataFiles: 'TestPlans/MyRun1.jtl'
             
             }
         }
