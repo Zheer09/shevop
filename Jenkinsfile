@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                jiraComment body: 'This comment was sent by jenkins1', issueKey: 'SHEV-1'
+                jiraComment body: 'This comment was sent by jenkins', issueKey: 'SHEV-1'
             }
         }
         stage('Execute JMeter') {
