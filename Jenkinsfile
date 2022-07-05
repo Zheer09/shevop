@@ -21,7 +21,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                
+                bat 'npm install'
             }
         }
         stage('Update jira Issue') {
