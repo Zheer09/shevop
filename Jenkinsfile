@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'sudo docker build -t shevop/questionapp:latest .'
+                sh 'docker build -t shevop/questionapp:latest .'
             }
         }
         stage('Docker login') {
@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Docker push') {
             steps {
-                sh 'sudo docker push shevop/questionApp:latest'
+                sh 'docker push shevop/questionApp:latest'
             }
         }
         stage('Update jira Issue') {
