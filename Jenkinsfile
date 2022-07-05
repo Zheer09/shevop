@@ -4,24 +4,24 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                bat 'npm install'
+                sh 'npm install'
             }
         }
         stage('Build') {
             steps {
-                bat 'npm run build'
+                sh 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'npm run test'
+                sh 'npm run test'
             }
         }
 
         stage('Deploy') {
             steps {
-                bat 'npm install'
+                sh ''
             }
         }
         stage('Update jira Issue') {
