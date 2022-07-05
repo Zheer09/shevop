@@ -26,12 +26,12 @@ pipeline {
         }
         stage('Docker login') {
             steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
             }
         }
         stage('Docker push') {
             steps {
-                sh 'docker push shevop/questionApp:latest'
+                sh 'docker push shevop/questionapp:latest'
             }
         }
         stage('Update jira Issue') {
