@@ -10,8 +10,8 @@ pipeline {
             steps {
                 
             sh '''
-               #!/bin/sh -c cd /opt/apache-jmeter-5.5/bin
-                #!/bin/sh -c ./jmeter -n -t Test\ Plans/PetStore-End-to-End-Flow.jmx -p Test\ Plans/data/PetStore_LoadTest.properties -JTOTAL_THREADS=1 -JTEST_DURATION=60 -l MyRun1.jtl
+               #!/bin/bash -c cd /opt/apache-jmeter-5.5/bin
+               #!/bin/bash -c ./jmeter -n -t Test\ Plans/PetStore-End-to-End-Flow.jmx -p Test\ Plans/data/PetStore_LoadTest.properties -JTOTAL_THREADS=1 -JTEST_DURATION=60 -l MyRun1.jtl
                '''
             }
         }
