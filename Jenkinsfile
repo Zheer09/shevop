@@ -3,7 +3,7 @@ pipeline {
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
 	}
-    tools {nodejs "nodejs" docker "docker"}
+    tools {nodejs "nodejs" dockerTool "docker"}
     stages {
         stage('Install') {
             steps {
