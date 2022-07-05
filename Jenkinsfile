@@ -1,7 +1,27 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('Install') {
+      steps {
+        bat 'npm install'
+      }
+    }
+    stage('Build') {
+      steps {
+        bat 'npm run build'
+      }
+    }
+    stage('Test') {
+      steps {
+        bat 'npm run test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        
+      }
+    }
+        stage('Update jira Issue') {
             steps {
                 jiraComment body: 'This comment was sent by jenkins', issueKey: 'SHEV-1'
             }
@@ -15,7 +35,7 @@ pipeline {
                '''
             }
         }
-        stage('Publish Report') {
+        stage('Publish JMeter Report') {
             steps {
             
                 perfReport filterRegex: '', sourceDataFiles: 'TestPlans/MyRun1.jtl'
