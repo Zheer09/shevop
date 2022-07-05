@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Docker login') {
             steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p clayHP123@'
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u shevop -p $DOCKERHUB_CREDENTIALS_PSW'
             }
         }
         stage('Docker push') {
