@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Docker build') {
             steps {
-                sh 'docker build -t shevop/questionApp:latest .'
+                sh 'docker build -t shevop/questionapp:latest .'
             }
         }
         stage('Docker login') {
