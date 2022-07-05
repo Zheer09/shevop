@@ -2,25 +2,28 @@ pipeline {
     agent any 
     stages {
         stage('Install') {
-      steps {
-        bat 'npm install'
-      }
-    }
-    stage('Build') {
-      steps {
-        bat 'npm run build'
-      }
-    }
-    stage('Test') {
-      steps {
-        bat 'npm run test'
-      }
-    }
-    stage('Deploy') {
-      steps {
-        
-      }
-    }
+            steps {
+                bat 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'npm run test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                
+            }
+        }
         stage('Update jira Issue') {
             steps {
                 jiraComment body: 'This comment was sent by jenkins', issueKey: 'SHEV-1'
