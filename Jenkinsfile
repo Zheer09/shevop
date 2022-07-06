@@ -19,6 +19,11 @@ pipeline {
                 sh 'npm run build'
             }
         }
+	stage('Docker Purne') {
+            steps {
+                sh 'docker image prune -af'
+            }
+        }
         stage('Docker build') {
             steps {
                 sh 'docker build -t shevop/questionapp:latest .'
