@@ -1,0 +1,70 @@
+[
+
+{
+    "text": "New York",
+    "answer": false
+},
+{
+    "text": "London",
+    "answer": false
+},
+{
+    "text": "Paris",
+    "answer": true
+},
+{
+    "text": "Dublin",
+    "answer": false
+},
+
+{
+    "text": "Jeff Bezos",
+    "answer": false
+},
+{
+    "text": "Elon Musk",
+    "answer": true
+},
+{
+    "text": "Bill Gates",
+    "answer": false
+},
+{
+    "text": "Tony Stark",
+    "answer": false
+},
+
+{
+    "text": "Apple",
+    "answer": true
+},
+{
+    "text": "Intel",
+    "answer": false
+},
+{
+    "text": "Amazon",
+    "answer": false
+},
+{
+    "text": "Microsoft",
+    "answer": false
+},
+
+{
+    "text": "I Don't Know!",
+    "answer": false
+},
+{
+    "text": "African or European Swallow?",
+    "answer": false
+},
+{
+    "text": "20.1 mph",
+    "answer": true
+},
+{
+    "text": "What?",
+    "answer": false
+}
+]

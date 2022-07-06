@@ -1,41 +1,42 @@
 import React, { useState } from 'react';
+import Data from "./answers.json";
 
 export default function App() {
 	const questions = [
 		{
 			questionText: 'What is the capital of France?',
 			answerOptions: [
-				{ answerText: 'New York', isCorrect: false },
-				{ answerText: 'London', isCorrect: false },
-				{ answerText: 'Paris', isCorrect: true },
-				{ answerText: 'Dublin', isCorrect: false },
+				{ answerText: Data.at(0).text, isCorrect: Data.at(0).answer },
+				{ answerText: Data.at(1).text, isCorrect: Data.at(1).answer },
+				{ answerText: Data.at(2).text, isCorrect: Data.at(2).answer },
+				{ answerText: Data.at(3).text, isCorrect: Data.at(3).answer },
 			],
 		},
 		{
 			questionText: 'Who is CEO of Tesla?',
 			answerOptions: [
-				{ answerText: 'Jeff Bezos', isCorrect: false },
-				{ answerText: 'Elon Musk', isCorrect: true },
-				{ answerText: 'Bill Gates', isCorrect: false },
-				{ answerText: 'Tony Stark', isCorrect: false },
+				{ answerText: Data.at(4).text, isCorrect: Data.at(4).answer },
+				{ answerText: Data.at(5).text, isCorrect: Data.at(5).answer },
+				{ answerText: Data.at(6).text, isCorrect: Data.at(6).answer },
+				{ answerText: Data.at(7).text, isCorrect: Data.at(7).answer },
 			],
 		},
 		{
 			questionText: 'The iPhone was created by which company?',
 			answerOptions: [
-				{ answerText: 'Apple', isCorrect: true },
-				{ answerText: 'Intel', isCorrect: false },
-				{ answerText: 'Amazon', isCorrect: false },
-				{ answerText: 'Microsoft', isCorrect: false },
+				{ answerText: Data.at(8).text, isCorrect: Data.at(8).answer },
+				{ answerText: Data.at(9).text, isCorrect: Data.at(9).answer },
+				{ answerText: Data.at(10).text, isCorrect: Data.at(10).answer },
+				{ answerText: Data.at(11).text, isCorrect: Data.at(11).answer },
 			],
 		},
 		{
-			questionText: 'How many Harry Potter books are there?',
+			questionText: 'What is the airspeed velocity of an unladen swallow?',
 			answerOptions: [
-				{ answerText: '1', isCorrect: false },
-				{ answerText: '4', isCorrect: false },
-				{ answerText: '6', isCorrect: false },
-				{ answerText: '7', isCorrect: true },
+				{ answerText: Data.at(12).text, isCorrect: Data.at(12).answer },
+				{ answerText: Data.at(13).text, isCorrect: Data.at(13).answer },
+				{ answerText: Data.at(14).text, isCorrect: Data.at(14).answer },
+				{ answerText: Data.at(15).text, isCorrect: Data.at(15).answer },
 			],
 		},
 	];
@@ -56,11 +57,22 @@ export default function App() {
 			setShowScore(true);
 		}
 	};
+	function refreshPage(){ 
+		window.location.reload(); 
+	}
 	return (
 		<div className='app'>
 			{showScore ? (
+				<div>
+					<br/><br/><br/>
 				<div className='score-section'>
-					You scored {score} out of {questions.length}
+					You scored {score} out of {questions.length}  
+					<br/>
+				</div>
+				
+				
+				<button type="button" onClick={ refreshPage }> <span>Try Again</span> </button> 
+			
 				</div>
 			) : (
 				<>
