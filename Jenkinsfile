@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Update jira Issue') {
             steps {
-                jiraComment body: 'This comment was sent by jenkins second one', issueKey: 'SHEV-1'
+                jiraComment body: 'This comment was sent by jenkins third times', issueKey: 'SHEV-1'
 		jiraSendBuildInfo branch: '', site: 'shevop.atlassian.net'
             }
         }
